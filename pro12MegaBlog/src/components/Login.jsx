@@ -4,7 +4,7 @@ import { login as authLogin } from "../store/authSlice";
 import { Button, Input, Logo } from "./index";
 import { useDispatch } from "react-redux";
 import authService from "../appwrite/auth";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 function Login() {
   const navigate = useNavigate();
@@ -48,6 +48,7 @@ function Login() {
           </Link>
         </p>
         {error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
+        {}
         <form onSubmit={handleSubmit(login)} className='mt-8'>
           <div className='space-y-5'>
             <Input
@@ -69,7 +70,7 @@ function Login() {
               type='Password'
               {...register("password", { required: true })}
             />
-            <Button type="submit" className="w-full">
+            <Button type='submit' className='w-full'>
               Sign in
             </Button>
           </div>
